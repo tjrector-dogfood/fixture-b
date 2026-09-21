@@ -1,0 +1,16 @@
+name: dryrun
+on: [push]
+jobs:
+  oidc-job:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - run: echo oidc
+  broad-job:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - run: echo broad
